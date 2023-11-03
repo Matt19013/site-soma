@@ -16,6 +16,9 @@ app.listen(port, function() {
 app.post('/soma', function (req, res) {
     var body = req.body;
     console.log(body);
-    res.send('via post');
-    res.send('Response da requisição POST');
+  res.send('via post');
+  res.send('Response da requisição POST');
+    var body = req.body;
+    var resultado = soma(body.a, body.b);
+  res.send(`O resultado da soma de ${body.a} e ${body.b} é ${resultado}`);
   });
