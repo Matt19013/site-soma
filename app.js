@@ -13,12 +13,14 @@ var port = 3001;
 app.listen(port, function() {
   console.log(`App de Exemplo escutando na porta http://localhost:${port}/`);
 });
+
+// Função soma
+function soma(a, b) {
+  return a + b;
+}
+
 app.post('/soma', function (req, res) {
     var body = req.body;
-    console.log(body);
-  res.send('via post');
-  res.send('Response da requisição POST');
-    var body = req.body;
     var resultado = soma(body.a, body.b);
-  res.send(`O resultado da soma de ${body.a} e ${body.b} é ${resultado}`);
-  });
+    res.send(`O resultado da soma de ${body.a} e ${body.b} é ${resultado}`);
+}); 
